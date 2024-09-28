@@ -15,7 +15,6 @@
           <div class="envelope">
               <div class="letter">
                   <div class="text">
-                     
                       <div class="button-container">
                         <div class="dog">
                           <div class="tail"></div>
@@ -41,8 +40,8 @@
                           </div>
                         </div>
                        
-                          <button>
-                            กดตรงนี้ 2ครั้งงับบ
+                          <button id="changeTextButton">
+                            กดตรงนี้งับบ
                           </button>
                         
                         <div class="paw"></div>
@@ -61,8 +60,6 @@
     <span>🩷</span>
     <span>เพื่อเปิด</span>
     <span>จดหมาย</span>
-    
-    
   </h1>
 
 </div>
@@ -77,14 +74,16 @@ const button = document.querySelector('button');
 button.addEventListener('click', () => {
     clickCount++; 
 
-    if (clickCount === 2) { 
+    if (clickCount === 1) { 
+        button.textContent = 'กดอีก2ครั้งงับบ'; 
+    } else if (clickCount === 2) { 
         window.location.href = 'goodnight.html'; 
     }
 
-    
     setTimeout(() => {
         clickCount = 0;
-    }, 300); 
+        button.textContent = 'กดตรงนี้งับบ'; 
+    }, 3000); 
 });
 
  const envelope = document.querySelector('.envelope-wrapper');
